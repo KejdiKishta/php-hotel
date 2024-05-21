@@ -67,5 +67,10 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 </head>
 <body class="bg-primary">
     <h1 class="text-center fw-bold text-white my-4">PHP Hotels</h1>
+    <?php foreach ($hotels as $cur_hotel) { ?>
+        <?php foreach ($cur_hotel as $key => $value) { ?>
+            <?php echo $value . "<br>"?>
+        <?php } ?>
+    <?php } ?>
 </body>
 </html>
