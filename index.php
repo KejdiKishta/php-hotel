@@ -90,13 +90,23 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
                                 } elseif ($value === false) {
                                     $value = "<span class='text-danger fw-bold'>&cross;</span>";
                                 }
+                                echo $value;
                             } elseif ($key === "vote") {
-                                $value = "{$value} &#9733;";
+                                $result = "";
+                                for ($i=0; $i < 5; $i++) {
+                                    if ($i < $value) {
+                                        $result = "$result&#9733;";
+                                    } else {
+                                        $result = "$result&#9734;";
+                                    }
+                                }
+                                echo $result;
                             } elseif ($key === "distance_to_center") {
                                 $value = "{$value} km";
+                                echo $value;
+                            } else {
+                                echo $value;
                             }
-                            
-                            echo $value;
                         ?>
                         <?php echo "</td>" ?>
                     <?php } ?>
